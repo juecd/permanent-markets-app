@@ -1,6 +1,5 @@
-import styles from '../styles/Grid.module.css';
-import { Container, Row } from 'react-grid-system';
-import GridItem from './GridItem';
+import { Container } from 'react-grid-system';
+import GridRow from './GridRow';
 
 const rowSize = 4; // 4 per row
 
@@ -13,36 +12,13 @@ const gridItemParser = (marketData) => {
     return rows;
 }
 
-// {marketData.map((market) => {
-//     return (
-//         <GridItem
-//             location={market.location}
-//             producer={market.producer}
-//             key={market.location.id}
-//             width={rowSize}
-//         />
-//     );
-// })}
-
 
 const Grid = ({ marketData }) => {
     const rows = gridItemParser(marketData);
     return (
         <Container fluid>
-            {rows.map((row) => {
-                return (
-                    <Row>
-                        {row.map((market) => {
-                            return (
-                                <GridItem
-                                    location={market.location}
-                                    producer={market.producer}
-                                    key={market.location.id}
-                                />
-                            );
-                        })}
-                    </Row>
-                );
+            {rows?.map((row) => {
+                return <GridRow row={row} />
             })}
         </Container>
     );

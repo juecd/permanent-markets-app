@@ -2,10 +2,9 @@ import Image from 'next/image';
 import styles from '../styles/GridItem.module.css';
 import { Col } from 'react-grid-system';
 
-//className={styles.card} styles={{ width }}
 
 const GridItem = (props) => {
-    const { location = { image }, width } = props;
+    const { location = { image } } = props;
     return (
         <Col className={styles.card}>
             <Image
