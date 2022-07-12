@@ -33,4 +33,4 @@ This is a sample app made for Permanent.
 - Set row breakpoints based on media queries
 - Optimize fetching limits in light of low bandwidth use cases
 - Pagination or infinite scroll
-- Client-facing error states
+- Client-facing error and empty states
