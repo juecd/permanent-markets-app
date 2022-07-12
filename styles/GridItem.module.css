@@ -1,0 +1,12 @@
+
+.card {
+  margin-bottom: .5rem;
+  border: 1px solid #eaeaea;
+  background-color: orange;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

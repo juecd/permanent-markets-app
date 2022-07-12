@@ -1,0 +1,12 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .grid {
+        background-color: blue;
+    }
+}

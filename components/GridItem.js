@@ -1,20 +1,23 @@
 import Image from 'next/image';
+import styles from '../styles/GridItem.module.css';
+import { Col } from 'react-grid-system';
+
+//className={styles.card} styles={{ width }}
 
 const GridItem = (props) => {
-    const { location = { image } } = props;
+    const { location = { image }, width } = props;
     return (
-        <div>
+        <Col className={styles.card}>
             <Image
                 src={'/fellow-farmer.svg'/*image && image.src*/}
                 alt={location && location.name}
                 width="55px"
                 height="55px"
             />
-            {/* Could make extend this to a link if we make individual pages to click through */}
-            <h2>
+            <p className={styles.card.h2}>
                 {location && location.name}
-            </h2>
-        </div>
+            </p>
+        </Col>
     );
 };
 
