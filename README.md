@@ -21,9 +21,9 @@ This is a sample app made for Permanent.
 - Switch to different methods of styling—such as CSS-in-JS as styling becomes more complex and dynamic
 - Build out state management, especially if using / manipulating fetched data
 - Switch <img> elements to Next's <Image> component to take advantage of lazy loading, image sizing optimization
-- Rewrite in Typescript
+- Rewrite in Typescript to benefit from compiler bug catching
 - Headless browser testing
-- Props validation
+- Props declarations and validations
 - Unit tests and integration tests
 
 ### Functional
