@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a sample app made for Permanent.
 
-## Getting Started
+## Technologies used
+- Next.js / React / Javascript
+- GraphQL / Apollo
+- Vercel
+- ES6
 
-First, run the development server:
+## Key Features
+- Flexible grid with definable number of items per row
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Technical choices
+- Next.js: per our conversation that Permanent's clients should be search engine optimized, benefit from caching, and support fast development (built-in router support, strong community developmentetc)
+- CSS Modules: due to the lightweight styles of the requested application, I opted to use built-in CSS modules, which benefits from ease of use and file structure, while avoiding pure CSS pitfalls, like unwieldy stylesheets
+- Statically hosted for fast deployment and client retrieval
+- react-grid-system library: for simple, responsive grid management; I chose this due to our lightweight UI needs, but a larger framework like MaterialUI might be more suitable for GUI-heavy functionality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Future improvements
+### Technical
+- Switch to different methods of styling—such as CSS-in-JS as styling becomes more complex and dynamic
+- Build out state management, especially if using / manipulating fetched data
+- Switch <img> elements to Next's <Image> component to take advantage of lazy loading, image sizing optimization
+- Rewrite in Typescript
+- Headless browser testing
+- Props validation
+- Unit tests and integration tests
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Functional
+- CRUD operations
+- Sorting
+- Filtering
+- Set row breakpoints based on media queries
+- Optimize fetching limits in light of low bandwidth use cases
+- Pagination or infinite scroll
+- Client-facing error states
