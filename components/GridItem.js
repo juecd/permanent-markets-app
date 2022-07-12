@@ -6,12 +6,11 @@ import { Col } from 'react-grid-system';
 const GridItem = (props) => {
     const { location = { image } } = props;
     return (
-        <Col className={styles.card}>
-            <Image
-                src={'/fellow-farmer.svg'/*image && image.src*/}
+        <Col className={styles.card} style={{ padding: 0 }}>
+            <img
+                src={'/sampleImg.png'/*image && image.src*/}
                 alt={location && location.name}
-                width="55px"
-                height="55px"
+                className={styles.img}
             />
             <p className={styles.card.h2}>
                 {location && location.name}

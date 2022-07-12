@@ -17,8 +17,11 @@ const Grid = ({ marketData }) => {
     const rows = gridItemParser(marketData);
     return (
         <Container fluid>
-            {rows?.map((row) => {
-                return <GridRow row={row} />
+            {rows?.map((row, i) => {
+                return <GridRow
+                    row={row}
+                    key={i}
+                />
             })}
         </Container>
     );

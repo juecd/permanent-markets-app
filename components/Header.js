@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import fellowFarmerLogo from '../public/fellow-farmer.svg';
+import styles from '../styles/Header.module.css';
 
 {/* <Image
                 src={fellowFarmerLogo}
@@ -9,7 +10,7 @@ import fellowFarmerLogo from '../public/fellow-farmer.svg';
 
 const Header = () => {
     return (
-        <div>
+        <div className={styles.header}>
             Fellow Farmer
         </div>
     );
