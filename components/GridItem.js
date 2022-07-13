@@ -4,14 +4,16 @@ import { Col } from 'react-grid-system';
 
 
 const GridItem = (props) => {
-    const { location = { image } } = props;
+    const { location, location: { image } } = props;
     return (
         <Col className={styles.card} style={{ padding: 0 }}>
-            <img
-                src={'/sampleImg.png'/*image && image.src*/}
-                alt={location && location.name}
-                className={styles.img}
-            />
+            <div className={styles.imgDiv}>
+                <img
+                    src={image && image.src || './sampleImg.png'}
+                    alt={location && location.name}
+                    className={styles.img}
+                />
+            </div>
             <p className={styles.card.h2}>
                 {location && location.name}
             </p>

@@ -1,3 +1,13 @@
 .header {
     margin-bottom: 25px;
 }
+
+.img {
+    width: 75px;
+}
+
+@media screen and (max-width: 600px) {
+    .img {
+        width: 50px;
+    }
+}

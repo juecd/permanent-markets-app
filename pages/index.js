@@ -3,9 +3,11 @@ import Header from '../components/Header';
 import Grid from '../components/Grid';
 import styles from '../styles/Home.module.css';
 
-import testData from '../components/sample';
+import { useMarkets } from '../helpers/fetch.js';
 
 export default function Home() {
+  const markets = useMarkets();
+
   return (
     <div className={styles.main}>
       <Head>
@@ -18,7 +20,7 @@ export default function Home() {
       <Header />
       
       <Grid 
-        marketData={testData}
+        marketData={markets}
       />
     </div>
   )
