@@ -1,7 +1,7 @@
 import { Container } from 'react-grid-system';
 import GridRow from './GridRow';
 
-const rowSize = 4; // 4 per row
+const rowSize = 4;
 
 const gridItemParser = (marketData) => {
     // @TODO would be nice in ES6

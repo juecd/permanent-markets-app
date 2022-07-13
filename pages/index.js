@@ -4,8 +4,8 @@ import Grid from '../components/Grid';
 import styles from '../styles/Home.module.css';
 
 const MARKETS_QUERY = `
-{
-  markets(limit: 100, skip: 0) {
+query {
+  markets(limit: 5) {
    location {
       id
       name
@@ -22,6 +22,7 @@ const MARKETS_QUERY = `
 `;
 
 export async function getStaticProps() {
+  // @TODO generalize and migrate to separate file if we re-use this method
   const res = await fetch('https://permanent-gateway.vercel.app/api/graphql', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
