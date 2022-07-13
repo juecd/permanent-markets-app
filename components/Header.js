@@ -1,17 +1,17 @@
 import Image from 'next/image';
-import fellowFarmerLogo from '../public/fellow-farmer.svg';
 import styles from '../styles/Header.module.css';
 
-{/* <Image
-                src={fellowFarmerLogo}
-                alt="Fellow Farmer logo"
-                width="76px"
-            /> */}
+import logo from '../public/fellow-farmer.svg';
 
 const Header = () => {
     return (
         <div className={styles.header}>
-            Fellow Farmer
+            {<Image
+                src={logo}
+                alt="Fellow Farmer logo"
+                width='75px'
+                height='75px'
+            />}
         </div>
     );
 }
