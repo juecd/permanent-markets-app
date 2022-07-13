@@ -3,11 +3,40 @@ import Header from '../components/Header';
 import Grid from '../components/Grid';
 import styles from '../styles/Home.module.css';
 
-import { useMarkets } from '../helpers/fetch.js';
+const MARKETS_QUERY = `
+{
+  markets(limit: 100, skip: 0) {
+   location {
+      id
+      name
+      image {
+        src
+      }
+    }
+    producer {
+      id
+      name
+    }
+  }
+}
+`;
 
-export default function Home() {
-  const markets = useMarkets();
+export async function getStaticProps() {
+  const res = await fetch('https://permanent-gateway.vercel.app/api/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query: MARKETS_QUERY }),
+  });
+  const data = await res.json();
 
+  return {
+    props: {
+      markets: data?.data?.markets || [],
+    },
+  }
+}
+
+export default function Home({ markets }) {
   return (
     <div className={styles.main}>
       <Head>
